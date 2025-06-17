@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivirtus AI AI News</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --primary: #4f8cff;
+      --accent: #2563eb;
+      --bg: #000000;
+      --bg2: #18181b;
+      --text: #fff;
+      --text-muted: #bbb;
+      --card: #0a0a0a;
+      --border: #232323;
+      --radius: 15px;
+    }
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    a { color: inherit; text-decoration: none; }
+    .navbar {
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem 3vw;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .navbar-flex {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .navbar-center {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .navbar-center nav {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .navbar-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .navbar .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .navbar nav a {
+      color: #fff;
+      margin-left: 2.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+      font-size: 1rem;
+    }
+    .navbar nav a:hover {
+      opacity: 1;
+      color: var(--primary);
+    }
+    .navbar .cta {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.7rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 2rem;
+      transition: background 0.2s;
+    }
+    .navbar .cta:hover {
+      background: var(--accent);
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 3vw 2rem 3vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 3rem;
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      line-height: 1.1;
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2.2rem;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 2.2rem;
+    }
+    .stat {
+      text-align: center;
+      background: #0a0a0a;
+      padding: 1.2rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid #4f8cff;
+      transition: transform 0.2s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .stat:hover {
+      transform: translateY(-3px);
+    }
+    .stat .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      white-space: nowrap;
+    }
+    .stat .stat-label {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .hero-btn {
+      background: #0a0a0a;
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 0.9rem 2.2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .hero-btn:hover {
+      background: var(--bg2);
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0px 0px 0px 0px rgba(79, 140, 255, 0.1);
+    }
+    .hero-image {
+      max-width: 400px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
+    }
+    .hero-image img {
+      width: 100%;
+      display: block;
+    }
+    /* Top Tech Features */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 3vw;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border: 1px solid var(--border);
+    }
+    .feature-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .feature-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .feature-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .feature-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .feature-actions .stats {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .feature-actions .stats span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+    .feature-actions .readmore {
+      background: var(--card);
+      color: #fff;
+      border: 1px solid var(--primary);
+      padding: 0.5rem 1.3rem;
+      border-radius: 20px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .feature-actions .readmore:hover {
+      background: var(--accent);
+    }
+    /* Latest Blogs */
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: #232323;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--primary);
+      opacity: 1;
+    }
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+    .blog-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 1px solid var(--border);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.7rem;
+    }
+    .blog-meta {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .blog-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .blog-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 0.7rem;
+    }
+    .blog-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+    .blog-actions .stats {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .blog-actions .stats span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .blog-actions .readmore {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.4rem 1.1rem;
+      border-radius: 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .blog-actions .readmore:hover {
+      background: var(--accent);
+    }
+    /* Testimonials */
+    .testimonials-section {
+      background: var(--bg);
+      padding: 3rem 0 3rem 0;
+    }
+    .testimonials {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3vw;
+    }
+    .testimonials-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      border: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .testimonial-profile {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+    }
+    .testimonial-profile img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--primary);
+    }
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .testimonial-location {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .testimonial-text {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    /* Newsletter */
+    .newsletter-section {
+      background: var(--bg);
+      padding: 3rem 0 3rem 0;
+    }
+    .newsletter {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 3vw;
+      text-align: center;
+    }
+    .newsletter-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .newsletter-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 600px) {
+      .newsletter-form {
+        flex-wrap: wrap;
+      }
+    }
+    .newsletter-form input {
+      padding: 0.7rem 1.2rem;
+      /*border-radius: 20px;*/
+      border: none;
+      border-bottom: 2px solid var(--border);
+      background: var(--bg);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      min-width: 180px;
+    }
+    .newsletter-form button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .newsletter-form button:hover {
+      background: var(--accent);
+    }
+    .newsletter-terms {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+    /* Footer */
+    .footer {
+      background: #111;
+      color: #bbb;
+      padding: 2.5rem 0 1.5rem 0;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3vw;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+    }
+    .footer-col {
+      min-width: 180px;
+      margin-bottom: 1.5rem;
+    }
+    .footer-col .footer-title {
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-col ul li {
+      margin-bottom: 0.7rem;
+    }
+    .footer-col ul li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--primary);
+    }
+    .footer-bottom {
+      text-align: center;
+      color: #666;
+      font-size: 0.98rem;
+      margin-top: 2rem;
+    }
+    .footer-social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+    .footer-social a {
+      color: #bbb;
+      transition: color 0.2s;
+      font-size: 1.3rem;
+    }
+    .footer-social a:hover {
+      color: var(--primary);
+    }
+    @media (max-width: 900px) {
+      .navbar-flex {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .navbar-left, .navbar-center, .navbar-right {
+        justify-content: center !important;
+      }
+      .navbar-center nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .hero-image {
+        margin-top: 2rem;
+      }
+      .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+    /* Add for hero feature and testimonial stars */
+    .hero-feature {
+      box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 0.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-stars svg {
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="container navbar-flex">
+      <div class="navbar-left logo">
+        <img src="https://www.svgrepo.com/show/354202/artificial-intelligence-ai.svg" alt="AI Logo" width="32" height="32" style="vertical-align:middle;"> Adivirtus AI
+      </div>
+      <div class="navbar-center">
+        <nav class="d-none d-md-flex align-items-center justify-content-center">
+          <a href="#" class="me-4">Home</a>
+          <a href="#features" class="me-4">Features</a>
+          <a href="#blogs" class="me-4">Blogs</a>
+          <a href="#resources" class="me-4">Resources</a>
+          <a href="#contact" class="me-4">Contact</a>
+        </nav>
+      </div>
+      <div class="navbar-right">
+        <button class="cta">Subscribe</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <div class="hero-title">Explore the Frontiers of Artificial Intelligence</div>
+            <div class="hero-desc">
+              Welcome to the epicenter of AI innovation. Adivirtus AI AI News is your passport to a world where machines think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.
+            </div>
+            <div class="row g-4 mb-4">
+              <div class="col-4">
+                <div class="stat" style="min-height: 110px;">
+                  <div class="stat-value">300+</div>
+                  <div class="stat-label">Resources</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat" style="min-height: 110px;">
+                  <div class="stat-value">12k+</div>
+                  <div class="stat-label">Total Downloads</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat" style="min-height: 110px;">
+                  <div class="stat-value">10k+</div>
+                  <div class="stat-label">Active Users</div>
+                </div>
+              </div>
+            </div>
+            <button class="hero-btn">Explore Resources <i class="fa-solid fa-arrow-trend-up"></i></button>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-image" style="margin-left: 100px;">
+            <img src="https://picsum.photos/400/400?random=1" alt="AI Abstract" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Tech Features -->
+  <section class="section" id="features">
+    <div class="container">
+      <span style="color: var(--primary); font-size: 1rem; font-weight: 500; margin-bottom: 0.2rem; background-color: #151519; padding: 8px; border-radius: 7px;">Stay updated with</span>
+      <div class="section-title">Top Tech Features</div>
+      <div class="row g-4">
+        <!-- Hero Feature Card (Full Width) -->
+        <div class="col-12">
+          <div class="feature-card hero-feature">
+            <img src="https://picsum.photos/600/400?random=2" alt="Feature 1" class="img-fluid">
+            <div class="feature-meta">
+              <span style="color: var(--primary);">Environment</span>
+              <span>Oct 10, 2023</span>
+              <span>Jane Smith</span>
+            </div>
+            <div class="feature-title">Global Climate Summit Addresses Urgent Climate Action</div>
+            <div class="feature-desc">World leaders gathered at the Global Climate Summit to discuss urgent climate action, emissions reductions, and renewable energy targets.</div>
+            <div class="feature-actions">
+              <div class="stats">
+                <span><i class="fa-regular fa-eye"></i> 14k</span>
+                <span><i class="fa-regular fa-comment"></i> 204</span>
+              </div>
+              <button class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- Row of 3 Feature Cards -->
+        <div class="col-md-4">
+          <div class="feature-card" style="min-height: 500px;">
+            <img src="https://picsum.photos/600/400?random=3" alt="Feature 2" class="img-fluid">
+            <div class="feature-meta">
+              <span>Politics</span>
+              <span>Oct 8, 2023</span>
+              <span>Alex Carter</span>
+            </div>
+            <div class="feature-title">A Decisive Victory for Progressive Policies</div>
+            <div class="feature-desc">A landmark win for progressive policies, setting a new direction for the nation.</div>
+            <div class="feature-actions">
+              <div class="stats">
+                <span><i class="fa-regular fa-eye"></i> 2.2k</span>
+                <span><i class="fa-regular fa-comment"></i> 60</span>
+              </div>
+              <button class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card" style="min-height: 500px;">
+            <img src="https://picsum.photos/600/400?random=4" alt="Feature 3" class="img-fluid">
+            <div class="feature-meta">
+              <span>Technology</span>
+              <span>Oct 5, 2023</span>
+              <span>Sam Lee</span>
+            </div>
+            <div class="feature-title">Tech Giants Unveil Cutting-Edge AI Innovations</div>
+            <div class="feature-desc">Major tech companies announce breakthroughs in artificial intelligence.</div>
+            <div class="feature-actions">
+              <div class="stats">
+                <span><i class="fa-regular fa-eye"></i> 6k</span>
+                <span><i class="fa-regular fa-comment"></i> 92</span>
+              </div>
+              <button class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card" style="min-height: 500px;">
+            <img src="https://picsum.photos/600/400?random=5" alt="Feature 4" class="img-fluid">
+            <div class="feature-meta">
+              <span>Health</span>
+              <span>Oct 2, 2023</span>
+              <span>Dr. Kim</span>
+            </div>
+            <div class="feature-title">COVID-19 Variants and their role in Tech</div>
+            <div class="feature-desc">Latest updates on COVID-19 variants and their impact on global health.</div>
+            <div class="feature-actions">
+              <div class="stats">
+                <span><i class="fa-regular fa-eye"></i> 10k</span>
+                <span><i class="fa-regular fa-comment"></i> 124</span>
+              </div>
+              <button class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Blogs -->
+  <section class="section" id="blogs">
+    <span style="color: var(--primary); font-size: 1rem; font-weight: 500; margin-bottom: 0.1rem; background-color: #151519; padding: 8px; border-radius: 7px;">AI knowledge treasure trove</span>
+    <div class="section-title-row" style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem;">
+      <div class="section-title" style="margin-bottom: 0;">Explore the Latest in the Tech–World</div>
+      <button class="explore-all-btn" style="background: #000000; color: #fff; border: 1px solid var(--primary); padding: 0.6rem 1.5rem; border-radius: 20px; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+        Explore All <i class="fa-solid fa-arrow-trend-up"></i>
+      </button>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active">All</button>
+      <button class="tab-btn">Quantum Computing</button>
+      <button class="tab-btn">AI Ethics</button>
+      <button class="tab-btn">Space Exploration</button>
+      <button class="tab-btn">Biotechnology</button>
+      <button class="tab-btn">Renewable Energy</button>
+    </div>
+    <div class="blogs-grid">
+      <div class="blog-card">
+        <img src="https://picsum.photos/600/400?random=6" alt="Blog 1">
+        <div class="blog-meta">
+          <span>John Techson</span>
+          <span>Oct 15, 2023</span>
+        </div>
+        <div class="blog-title">The Quantum Leap in Computing</div>
+        <div class="blog-desc">Explore the revolution in quantum computing, its applications, and its potential impact on various industries.</div>
+        <div class="blog-actions">
+          <div class="stats">
+            <span><i class="fa-regular fa-eye"></i> 24.5k</span>
+            <span><i class="fa-regular fa-comment"></i> 50</span>
+          </div>
+          <button class="readmore">View Blog <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://picsum.photos/600/400?random=7" alt="Blog 2">
+        <div class="blog-meta">
+          <span>Sarah Ethicist</span>
+          <span>Nov 5, 2023</span>
+        </div>
+        <div class="blog-title">The Ethical Dilemmas of AI</div>
+        <div class="blog-desc">A deep dive into ethical challenges posed by AI, including bias, privacy, and transparency.</div>
+        <div class="blog-actions">
+          <div class="stats">
+            <span><i class="fa-regular fa-eye"></i> 32k</span>
+            <span><i class="fa-regular fa-comment"></i> 72</span>
+          </div>
+          <button class="readmore">View Blog <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://picsum.photos/600/400?random=8" alt="Blog 3">
+        <div class="blog-meta">
+          <span>Astronomer X</span>
+          <span>Dec 10, 2023</span>
+        </div>
+        <div class="blog-title">The Mars Colonization Challenge</div>
+        <div class="blog-desc">Exploring the technical and logistical challenges of human colonization on Mars.</div>
+        <div class="blog-actions">
+          <div class="stats">
+            <span><i class="fa-regular fa-eye"></i> 20k</span>
+            <span><i class="fa-regular fa-comment"></i> 31</span>
+          </div>
+          <button class="readmore">View Blog <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section">
+    <div class="testimonials">
+      <span style="color: var(--primary); font-size: 1rem; font-weight: 500; margin-bottom: 0.1rem; background-color: #151519; padding: 8px; border-radius: 7px;">What our Readers Say</span>
+      <div class="testimonials-title">Real Words from Real Readers</div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="https://picsum.photos/48/48?random=11" alt="Sarah Thompson">
+            <div>
+              <div class="testimonial-name">Sarah Thompson</div>
+              <div class="testimonial-location">San Francisco, USA</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+          </div>
+          <div class="testimonial-text">The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="https://picsum.photos/48/48?random=12" alt="Raj Patel">
+            <div>
+              <div class="testimonial-name">Raj Patel</div>
+              <div class="testimonial-location">Mumbai, India</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+          </div>
+          <div class="testimonial-text">The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="https://picsum.photos/48/48?random=13" alt="Emily Adams">
+            <div>
+              <div class="testimonial-name">Emily Adams</div>
+              <div class="testimonial-location">London, UK</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+          </div>
+          <div class="testimonial-text">The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="https://picsum.photos/48/48?random=14" alt="Alan Jackson">
+            <div>
+              <div class="testimonial-name">Alan Jackson</div>
+              <div class="testimonial-location">Houston, USA</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+          </div>
+          <div class="testimonial-text">The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="https://picsum.photos/48/48?random=15" alt="Jessica Miller">
+            <div>
+              <div class="testimonial-name">Jessica Miller</div>
+              <div class="testimonial-location">Boston, USA</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+          </div>
+          <div class="testimonial-text">The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics.</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-profile">
+            <img src="https://picsum.photos/48/48?random=16" alt="Diego Lopez">
+            <div>
+              <div class="testimonial-name">Diego Lopez</div>
+              <div class="testimonial-location">Barcelona, Spain</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+            <i class="fa-solid fa-star" style="color:#FFD700;"></i>
+          </div>
+          <div class="testimonial-text">The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="newsletter">
+      <div class="newsletter-title">Be Part of the Future Tech Revolution</div>
+      <div class="newsletter-desc">Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</div>
+      <form class="newsletter-form">
+        <input type="text" placeholder="Enter your name" required>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <div class="newsletter-terms">
+        <input type="checkbox" id="terms" required style="vertical-align:middle;"> <label for="terms">By checking this box, you confirm that you have read and are agreeing to our terms of use regarding the storage of the data submitted through this form.</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-col">
+        <div class="footer-title">Home</div>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">News</div>
+        <ul>
+          <li><a href="#">Trending Stories</a></li>
+          <li><a href="#">Featured Videos</a></li>
+          <li><a href="#">Technology</a></li>
+          <li><a href="#">Health</a></li>
+          <li><a href="#">Politics</a></li>
+          <li><a href="#">Environment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Blogs</div>
+        <ul>
+          <li><a href="#">Quantum Computing</a></li>
+          <li><a href="#">AI Ethics</a></li>
+          <li><a href="#">Space Exploration</a></li>
+          <li><a href="#">Biotechnology</a></li>
+          <li><a href="#">Renewable Energy</a></li>
+          <li><a href="#">Biohacking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Podcasts</div>
+        <ul>
+          <li><a href="#">AI Revolution</a></li>
+          <li><a href="#">TechTalk AI</a></li>
+          <li><a href="#">AI Conversations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Resources</div>
+        <ul>
+          <li><a href="#">Whitepapers</a></li>
+          <li><a href="#">Ebooks</a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Research Papers</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
